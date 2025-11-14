@@ -1,0 +1,86 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e2e6ea;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* src/components/Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #ffffff; /* Fondo blanco para un look limpio */
+  border-bottom: 1px solid #e2e6ea;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil para un efecto 3D */
+  position: sticky; /* Se mantiene fijo en la parte superior */
+  top: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #28a745; /* Color del logo para que destaque */
+  text-decoration: none;
+  letter-spacing: -1px; /* Espaciado para un mejor look */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #555; /* Color inicial del texto */
+  font-weight: 600;
+  position: relative; /* Para la animación de la línea inferior */
+  padding-bottom: 5px; /* Espacio para la línea */
+  transition: color 0.3s ease; /* Transición para el cambio de color */
+}
+
+/* Efecto hover: Cambio de color del texto */
+.nav a:hover {
+  color: #28a745; /* Cambia a un color verde llamativo */
+}
+
+/* Efecto visual al pasar el cursor (línea inferior) */
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Empieza con un ancho de 0 */
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #28a745;
+  transition: width 0.3s ease-in-out; /* Transición de ancho para la animación */
+}
+
+.nav a:hover::after {
+  width: 100%; /* El ancho se expande a 100% al pasar el cursor */
+}

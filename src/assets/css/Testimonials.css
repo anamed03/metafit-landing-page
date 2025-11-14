@@ -1,0 +1,171 @@
+/* src/components/Testimonials.css */
+
+.testimonials-section {
+  padding: 80px 50px;
+  text-align: center;
+  background-color: var(--color-background-light); /* Fondo suave */
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--color-text-dark);
+}
+
+/* ---------------------------------- */
+/* Contenedor y Carrusel de Transición */
+/* ---------------------------------- */
+
+.testimonial-carousel-container {
+  position: relative;
+  height: 300px; /* Altura fija para evitar saltos al cambiar el contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 700px; /* Limita el ancho del carrusel */
+}
+
+.testimonial-card-slide {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0; /* Por defecto, oculto */
+  transition: opacity 1.5s ease-in-out; /* La transición suave */
+  
+  /* Estilo de la tarjeta (el "cuadrito") */
+  background-color: var(--color-white); 
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+  text-align: left;
+}
+
+.testimonial-card-slide.active {
+  opacity: 1; /* El testimonio activo es visible */
+}
+
+/* ---------------------------------- */
+/* Estilos Internos de la Tarjeta */
+/* ---------------------------------- */
+
+.testimonial-quote {
+  font-style: italic;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  min-height: 80px; /* Mínima altura para evitar saltos de contenido si las citas son cortas */
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--color-primary); /* Borde de color Metafit */
+}
+
+.author-name {
+  font-weight: 700; 
+  color: var(--color-text-dark); 
+  font-size: 1.1rem;
+}
+/* src/components/Testimonials.css */
+
+/* ---------------------------------- */
+/* Contenedor y Carrusel de Transición */
+/* ---------------------------------- */
+
+.testimonial-carousel-container {
+  position: relative;
+  height: 300px; /* Asegura que la altura se mantenga constante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.testimonial-card-slide {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out; 
+  
+  /* ESTILO DE TARJETA MEJORADO */
+  background-color: var(--color-white); 
+  border-radius: 12px; /* Ligeramente más suaves */
+  padding: 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada pero suave */
+  text-align: left;
+  
+  /* NUEVO ESTILO: Borde vertical de cita */
+  border-left: 5px solid var(--color-primary); 
+}
+
+.testimonial-card-slide.active {
+  opacity: 1;
+}
+
+/* ---------------------------------- */
+/* Estilos Internos de la Tarjeta */
+/* ---------------------------------- */
+
+.testimonial-quote {
+  /* CAMBIOS EN TIPOGRAFÍA */
+  font-style: italic;
+  font-weight: 500; /* Hace la cita más legible */
+  color: var(--color-text-dark); /* Color más oscuro para que se lea bien */
+  font-size: 1.2rem; /* Ligeramente más grande */
+  line-height: 1.8; /* Mayor espaciado entre líneas */
+  margin-bottom: 25px;
+  min-height: 80px; 
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Separador más sutil */
+  border-top: 1px dashed #ddd; 
+  padding-top: 20px;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Se elimina el borde primario para que la imagen se vea más limpia */
+}
+
+.author-name {
+  font-weight: 700; 
+  color: var(--color-primary); /* Se usa el color primario para destacar el nombre */
+  font-size: 1.1rem; 
+  letter-spacing: 0.5px;
+}
+
+/* ---------------------------------- */
+/* Efectos de Interacción (Opcional) */
+/* ---------------------------------- */
+
+/* Aunque es un carrusel automático, el estilo hover es bueno si planeas hacerlo manual */
+/*
+.testimonial-card-slide:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
+}
+*/

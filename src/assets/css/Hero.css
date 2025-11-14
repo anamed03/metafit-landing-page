@@ -1,0 +1,109 @@
+/* Elimina el estilo anterior de hero-section si existía */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Ajusta la altura según tus preferencias */
+  overflow: hidden; /* Oculta las partes de las imágenes que no están activas */
+  display: flex; /* Para centrar el contenido */
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Cubre todo el área del slide */
+  background-position: center; /* Centra la imagen */
+  opacity: 0; /* Por defecto, las diapositivas están ocultas */
+  transition: opacity 1.5s ease-in-out; /* Transición para el efecto de fundido */
+  display: flex; /* Para el contenido de texto */
+  justify-content: center;
+  align-items: center;
+  color: white; /* Color del texto sobre la imagen */
+}
+
+.carousel-slide.active {
+  opacity: 1; /* La diapositiva activa es visible */
+}
+
+.hero-content {
+  max-width: 700px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+  padding: 40px;
+  border-radius: 10px;
+  z-index: 1; /* Asegura que el contenido esté por encima de la imagen */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: white; /* Texto blanco para contraste */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: white; /* Texto blanco para contraste */
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white; /* Cambiado a blanco para contraste */
+  border: 2px solid white; /* Borde blanco para contraste */
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #28a745;
+}
+
+/* Media Queries para responsividad (opcional pero recomendado) */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,74 @@
+/* src/assets/css/About.css */
+
+.about-section {
+  display: flex;
+  flex-direction: column; /* Columna por defecto para móviles */
+  gap: 50px;
+  padding: 80px 50px;
+  background-color: #f9f9f9; /* Fondo blanco para limpieza */
+}
+
+/* ---------------------------------- */
+/* Contenido (Texto) */
+/* ---------------------------------- */
+
+.about-content {
+  flex: 1; /* Ocupa el espacio disponible */
+  max-width: 600px;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  border-left: 4px solid #28a745; /* Línea de color para un toque moderno */
+  padding-left: 15px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------- */
+/* Imagen */
+/* ---------------------------------- */
+
+.about-image-container {
+  flex: 1; /* Ocupa el espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Espacio extra en pantallas pequeñas */
+  margin-top: 30px; 
+}
+
+.about-image-media {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover;
+  
+  /* EFECTO PROFESIONAL: Sombra y rotación sutil */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+  transform: rotate(-2deg); /* Rota la imagen 2 grados para un look dinámico */
+  transition: transform 0.3s ease;
+}
+
+.about-image-media:hover {
+  transform: rotate(0deg) scale(1.02); /* Se endereza y agranda al pasar el mouse */
+}
+
+/* ---------------------------------- */
+/* Media Query para Escritorio (Two Columns) */
+/* ---------------------------------- */
+
+@media (min-width: 900px) {
+  .about-section {
+    flex-direction: row; /* Fila para pantallas grandes (2 columnas) */
+    align-items: center;
+    justify-content: space-between;
+  }
+}
