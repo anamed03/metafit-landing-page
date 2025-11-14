@@ -6,7 +6,7 @@ import Testimonials from './assets/Testimonials';
 import Footer from './assets/Footer';
 import './App.css'; 
 import About from './assets/About';
-import CallToAction from './assets/CalltoAction';
+import CallToAction from './assets/CallToAction';
 
 const App = () => {
   return (
