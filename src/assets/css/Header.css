@@ -1,86 +1,131 @@
+/* ============================================================== */
+/* 1. ESTILOS BASE: DISEÑO DE ESCRITORIO (APLICADO POR DEFECTO)   */
+/* ============================================================== */
+
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e2e6ea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff; /* Fondo blanco para un look limpio */
+    border-bottom: 1px solid #e2e6ea;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    position: sticky; /* Se mantiene fijo en la parte superior */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 28px;
+    font-weight: bold;
+    color: #28a745; /* Color del logo (Verde) */
+    text-decoration: none;
+    letter-spacing: -1px;
 }
 
+/* El menú de navegación debe ser horizontal en escritorio */
 .nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+    list-style: none;
+    display: flex; /* <-- CLAVE: Esto asegura la horizontalidad en PC */
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-/* src/components/Header.css */
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background-color: #ffffff; /* Fondo blanco para un look limpio */
-  border-bottom: 1px solid #e2e6ea;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil para un efecto 3D */
-  position: sticky; /* Se mantiene fijo en la parte superior */
-  top: 0;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #28a745; /* Color del logo para que destaque */
-  text-decoration: none;
-  letter-spacing: -1px; /* Espaciado para un mejor look */
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #555; /* Color inicial del texto */
-  font-weight: 600;
-  position: relative; /* Para la animación de la línea inferior */
-  padding-bottom: 5px; /* Espacio para la línea */
-  transition: color 0.3s ease; /* Transición para el cambio de color */
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    position: relative; 
+    padding-bottom: 5px; 
+    transition: color 0.3s ease;
 }
 
 /* Efecto hover: Cambio de color del texto */
 .nav a:hover {
-  color: #28a745; /* Cambia a un color verde llamativo */
+    color: #28a745;
 }
 
-/* Efecto visual al pasar el cursor (línea inferior) */
+/* Efecto hover: Línea inferior */
 .nav a::after {
-  content: '';
-  position: absolute;
-  width: 0; /* Empieza con un ancho de 0 */
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #28a745;
-  transition: width 0.3s ease-in-out; /* Transición de ancho para la animación */
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #28a745;
+    transition: width 0.3s ease-in-out; 
 }
 
 .nav a:hover::after {
-  width: 100%; /* El ancho se expande a 100% al pasar el cursor */
+    width: 100%; 
+}
+
+/* Ocultar el ícono de hamburguesa en la computadora */
+.burger-menu-icon {
+    display: none; /* <-- CLAVE: Oculto por defecto */
+    cursor: pointer;
+    font-size: 28px;
+    color: #28a745;
+    z-index: 1001; /* Siempre visible si se muestra */
+}
+
+
+/* ============================================================== */
+/* 2. MEDIA QUERY: ESTILOS RESPONSIVOS (MÓVIL Y TABLET PEQUEÑA)   */
+/* ============================================================== */
+
+@media (max-width: 768px) {
+    /* Ajustar el padding del header en móvil para evitar márgenes grandes */
+    .header {
+        padding: 15px 20px;
+    }
+    
+    /* 1. Mostrar el ícono de hamburguesa */
+    .burger-menu-icon {
+        display: block; /* <-- Muestra el ícono solo en móvil */
+    }
+
+    /* 2. Configurar el menú oculto (El contenedor <nav>) */
+    .nav {
+        /* Posicionamiento para cubrir todo el ancho bajo el header */
+        position: absolute;
+        top: 60px; /* Posicionado debajo de la altura del header (aprox. 60px) */
+        right: 0;
+        width: 100%;
+        
+        /* Ocultación Inicial */
+        height: 0; /* <-- CLAVE: Altura cero para ocultar el menú */
+        overflow: hidden; /* Oculta el contenido */
+        
+        background-color: #ffffff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transition: height 0.3s ease-in-out; /* Animación de apertura */
+    }
+    
+    /* 3. Anular el diseño horizontal y forzar el apilamiento vertical */
+    .nav ul {
+        flex-direction: column; /* <-- CLAVE: Anula 'display: flex' */
+        align-items: center; /* Centra los enlaces */
+        padding: 10px 0;
+    }
+    
+    /* 4. Ajustar el estilo de los enlaces */
+    .nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    /* 5. Desactivar el efecto hover de la línea en móvil (Opcional, para simplificar el toque) */
+    .nav a::after {
+        display: none;
+    }
+
+    /* 6. Estado Activo: Muestra el menú cuando React le añade la clase 'active' */
+    .nav.active {
+        /* Altura necesaria para mostrar todos los enlaces. Ajusta si tienes más */
+        height: 250px; 
+    }
 }
