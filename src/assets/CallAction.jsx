@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/CallToAction.css';
+import '../assets/css/CallAction.css';
 
 const CallToAction = () => {
   // CalltoAction.jsx
